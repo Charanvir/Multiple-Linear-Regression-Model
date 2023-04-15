@@ -31,3 +31,14 @@ np.set_printoptions(precision=2)
 # Once the individuals are vertical, we can to concatenate them horizontally
 # Axis 1 = horizontal, 0 = vertical
 print(np.concatenate((y_pred.reshape(len(y_pred), 1), y_test.reshape(len(y_test), 1)), axis=1))
+
+# Get a single prediction
+new_startup_prediction = regressor.predict([[1,0,0, 200000, 250000, 450000]])
+print(new_startup_prediction)
+
+# Get the final linear regression equations with the values of the coefficient
+coefficients = regressor.coef_
+intercept = regressor.intercept_
+
+print(coefficients)
+print(intercept)
